@@ -6,3 +6,4 @@ npm-debug.log
 /*.env
 .vs
 obj
+bin
