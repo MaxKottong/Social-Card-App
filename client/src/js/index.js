@@ -9,7 +9,7 @@ import Logo from '../images/logo.png';
 import Bear from '../images/bear.png';
 import Dog from '../images/dog.png';
 
-import { initdb, getDb, postDb, deleteDb } from './database';
+import { initdb, editDb, postDb, deleteDb } from './database';
 
 import { fetchCards } from './cards';
 
@@ -43,7 +43,15 @@ form.addEventListener('submit', event => {
         postDb(name, email, phone, profile);
     } else {
 
+        let name = document.getElementById("name").value;
+        let phone = document.getElementById("phone").value;
+        let email = document.getElementById("email").value;
+        let profile = document.querySelector('input[type="radio"]:checked').value;
+
+        editDb(profileId, name, email, phone, profile);
+
         fetchCards();
+
         submitBtnToUpdate = false;
     }
 
